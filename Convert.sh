@@ -86,6 +86,6 @@ total=$(( ${#meetingId} - ${#offset} ))
 filename="${name}${meetingId:offset:total}.webm"
 
 #Meeting download command
-node ./bbb-recorder/export.js "https://SERVERHERE/playback/presentation/2.0/playback.html?meetingId=${meetingId}" $filename $time false
+node ./bbb-recorder/export.js "https://classroom.esp-ac.uk/playback/presentation/2.0/playback.html?meetingId=${meetingId}" $filename $time false
 
 #Changing file extension
