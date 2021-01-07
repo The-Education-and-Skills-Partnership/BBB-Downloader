@@ -1,4 +1,8 @@
 #!/bin/bash
+
+# getting the environment variables
+source .env
+
 DIR="$( cd "$( dirname "{$BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 #Text for invalid arguments
@@ -86,6 +90,6 @@ total=$(( ${#meetingId} - ${#offset} ))
 filename="${name}${meetingId:offset:total}.webm"
 
 #Meeting download command
-node ./bbb-recorder/export.js "https://classroom.esp-ac.uk/playback/presentation/2.0/playback.html?meetingId=${meetingId}" $filename $time false
+node ./bbb-recorder/export.js "https://$URL/playback/presentation/2.0/playback.html?meetingId=${meetingId}" $filename $time false
 
 #Changing file extension
